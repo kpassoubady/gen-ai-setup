@@ -59,6 +59,10 @@ After completing the OS-specific install guide, confirm the following:
 - [ ] `python3 test-setup/hello_llm.py` prints `✅ SETUP VERIFIED`
 - [ ] Jupyter notebook launches: `jupyter notebook --no-browser`
 
+## Course Syllabus
+
+For a detailed 4-day training outline, see [Generative AI: 4-Day Detailed Outline](./catalog/Generative-AI-4Day-Detailed-Outline-Holman.md).
+
 ## Need Help?
 
 If you encounter any issues during setup, please reach out to your instructor before the training day.
