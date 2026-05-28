@@ -1,4 +1,4 @@
-# Generative AI: Prompt Engineering for Software Developers — Setup Guide
+# Generative AI: Prompt Engineering for Software Developers - Setup Guide
 
 Pre-class installation instructions for the **Generative AI: Prompt Engineering for Software Developers** course.
 
@@ -20,9 +20,9 @@ Click on the link for your operating system to view the detailed setup guide.
 | **Language Runtime** | Python 3.11+ (3.12 recommended) |
 | **Code Editor** | Visual Studio Code |
 | **Version Control** | Git |
-| **AI Coding Assistant** | One of: GitHub Copilot, Cursor, Windsurf, or Claude Code (instructor will confirm) |
+| AI Coding Assistant | One of: GitHub Copilot, Cursor, Windsurf, or Claude Code (instructor will confirm) |
 | **Python Packages** | Installed from [`test-setup/requirements.txt`](./test-setup/requirements.txt) (`litellm`, `openai`, `tiktoken`, `python-dotenv`, `numpy`, `faiss-cpu`, `flask`, `requests`, `jupyter`) |
-| **API Access** | A corporate LLM gateway token, **or** a personal OpenAI / Gemini / Claude key |
+| API Access | A corporate LLM gateway token, or a personal OpenAI / Gemini / Claude key |
 
 > [!NOTE]
 > Your instructor will confirm which AI coding assistant the team will use before the training. The core course content is the same regardless of the tool.

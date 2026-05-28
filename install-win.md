@@ -1,8 +1,6 @@
-# Generative AI: Prompt Engineering for Software Developers — Windows Install
+# Generative AI: Prompt Engineering for Software Developers - Windows Install
 
 This guide walks through the complete development environment setup on Windows 10/11 for the 4-day training course.
-
----
 
 ## 1. Install Python
 
@@ -28,8 +26,6 @@ Upgrade pip:
 python -m pip install --upgrade pip
 ```
 
----
-
 ## 2. Install Git
 
 Download from <https://git-scm.com/download/win> and install with default options.
@@ -46,8 +42,6 @@ Configure (use your name and email):
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
-
----
 
 ## 3. Install Visual Studio Code
 
@@ -74,8 +68,6 @@ code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-python.debugpy
 ```
-
----
 
 ## 4. AI Coding Assistant Setup
 
@@ -123,8 +115,6 @@ claude
 
 - For detailed setup, see the [Claude Helper](https://github.com/kpassoubady/claude-helper).
 
----
-
 ## 5. Get the Setup Project & Install Packages
 
 Clone the setup repository :
@@ -150,8 +140,6 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
----
-
 ## 6. Configure API Access
 
 The setup project ships a `.env.example` template. Copy it and fill in your values:
@@ -160,7 +148,7 @@ The setup project ships a `.env.example` template. Copy it and fill in your valu
 copy .env.example .env
 ```
 
-Open `.env` and configure the provider your team uses. **Most teams use the gateway (no personal API key needed):**
+Open `.env` and configure the provider your team uses. Most teams use the gateway (no personal API key needed):
 
 ```text
 LLM_PROVIDER=azure
@@ -176,8 +164,6 @@ AZURE_AD_TOKEN=<your bearer token>
 >
 > Have a personal OpenAI key instead? Set `LLM_PROVIDER=openai` and
 > `OPENAI_API_KEY=sk-...` (account needs ~$5 credit).
-
----
 
 ## 7. Verify Everything Works
 
@@ -195,8 +181,6 @@ A successful run ends with:
 
 If it fails, see the troubleshooting table in [`test-setup/README.md`](./test-setup/README.md) or section 9 below.
 
----
-
 ## 8. Jupyter Notebook Verification
 
 ```cmd
@@ -212,8 +196,6 @@ Create a new Python 3 notebook and run:
 import openai, tiktoken, numpy
 print("All imports successful. You are ready for class!")
 ```
-
----
 
 ## 9. Troubleshooting
 
@@ -231,8 +213,6 @@ print("All imports successful. You are ready for class!")
 | Cursor/Windsurf not connecting | Ensure you are signed in and have an active subscription |
 | Long path errors | Enable long paths: run as admin `reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f` and restart |
 
----
-
 ## Summary
 
 After completing this guide, you should have:
@@ -246,4 +226,4 @@ After completing this guide, you should have:
 - `hello_llm.py` printing `✅ SETUP VERIFIED`
 - Jupyter notebooks running
 
-**You are ready for Day 1!**
+You are ready for Day 1!

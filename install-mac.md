@@ -1,8 +1,6 @@
-# Generative AI: Prompt Engineering for Software Developers — macOS Install
+# Generative AI: Prompt Engineering for Software Developers - macOS Install
 
 This guide walks through the complete development environment setup on macOS for the 4-day training course.
-
----
 
 ## 1. Install Homebrew (if not already installed)
 
@@ -15,8 +13,6 @@ Verify:
 ```bash
 brew --version
 ```
-
----
 
 ## 2. Install Python
 
@@ -39,8 +35,6 @@ Upgrade pip:
 pip3 install --upgrade pip
 ```
 
----
-
 ## 3. Install Git
 
 ```bash
@@ -59,8 +53,6 @@ Configure (use your name and email):
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
-
----
 
 ## 4. Install Visual Studio Code
 
@@ -86,8 +78,6 @@ code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-python.debugpy
 ```
-
----
 
 ## 5. AI Coding Assistant Setup
 
@@ -136,8 +126,6 @@ claude
 
 - For detailed setup, see the [Claude Helper](https://github.com/kpassoubady/claude-helper).
 
----
-
 ## 6. Get the Setup Project & Install Packages
 
 Clone the setup repository:
@@ -156,8 +144,6 @@ pip3 install --upgrade pip
 pip3 install -r requirements.txt
 ```
 
----
-
 ## 7. Configure API Access
 
 The setup project ships a `.env.example` template. Copy it and fill in your values:
@@ -166,7 +152,7 @@ The setup project ships a `.env.example` template. Copy it and fill in your valu
 cp .env.example .env
 ```
 
-Open `.env` and configure the provider your team uses. **Most teams use the gateway (no personal API key needed):**
+Open `.env` and configure the provider your team uses. Most teams use the gateway (no personal API key needed):
 
 ```text
 LLM_PROVIDER=azure
@@ -182,8 +168,6 @@ AZURE_AD_TOKEN=<your bearer token>
 >
 > Have a personal OpenAI key instead? Set `LLM_PROVIDER=openai` and
 > `OPENAI_API_KEY=sk-...` (account needs ~$5 credit).
-
----
 
 ## 8. Verify Everything Works
 
@@ -201,8 +185,6 @@ A successful run ends with:
 
 If it fails, see the troubleshooting table in [`test-setup/README.md`](./test-setup/README.md) or section 10 below.
 
----
-
 ## 9. Jupyter Notebook Verification
 
 ```bash
@@ -219,8 +201,6 @@ import openai, tiktoken, numpy
 print("All imports successful. You are ready for class!")
 ```
 
----
-
 ## 10. Troubleshooting
 
 | Issue | Solution |
@@ -233,8 +213,6 @@ print("All imports successful. You are ready for class!")
 | Virtual environment not activating | Ensure you run `source .venv/bin/activate` (not `.venv\Scripts\activate`) |
 | Copilot not suggesting | Check license status at <https://github.com/settings/copilot> |
 | Cursor/Windsurf not connecting | Ensure you are signed in and have an active subscription |
-
----
 
 ## Summary
 
@@ -249,4 +227,4 @@ After completing this guide, you should have:
 - `hello_llm.py` printing `✅ SETUP VERIFIED`
 - Jupyter notebooks running
 
-**You are ready for Day 1!**
+You are ready for Day 1!
