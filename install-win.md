@@ -89,20 +89,20 @@ code --install-extension GitHub.copilot-chat
 ```
 
 - Sign in with your GitHub account that has an active Copilot license.
-- Verify: open VS Code, type a comment in a `.py` file — Copilot should suggest completions.
+- Verify: open VS Code, type a comment in a `.py` file, and Copilot should suggest completions.
 - For detailed setup, see the [GitHub Copilot Helper](https://github.com/kpassoubady/github-copilot-helper).
 
 ### Option B: Cursor
 
 - Download and install from <https://cursor.com>.
-- Cursor is a standalone editor (VS Code fork) — no separate extension needed.
+- Cursor is a standalone editor (VS Code fork), so no separate extension is needed.
 - Sign in with your Cursor account.
 - For detailed setup, see the [Cursor Helper](https://github.com/kpassoubady/cursor-helper).
 
 ### Option C: Windsurf
 
 - Download and install from <https://windsurf.com>.
-- Windsurf is a standalone editor (VS Code fork) — no separate extension needed.
+- Windsurf is a standalone editor (VS Code fork), so no separate extension is needed.
 - Sign in with your Windsurf account.
 - For detailed setup, see the [Windsurf Helper](https://github.com/kpassoubady/windsurf-helper).
 
@@ -127,11 +127,11 @@ claude
 
 ## 5. Get the Setup Project & Install Packages
 
-Clone the setup repository (the only repo shared before class):
+Clone the setup repository :
 
 ```cmd
-git clone https://github.com/kpassoubady/gen-ai-setup.git %USERPROFILE%\gen-ai-course
-cd %USERPROFILE%\gen-ai-course\test-setup
+git clone https://github.com/kpassoubady/gen-ai-setup.git %USERPROFILE%\gen-ai-setup
+cd %USERPROFILE%\gen-ai-setup\test-setup
 ```
 
 Create and activate a virtual environment:
@@ -172,7 +172,7 @@ AZURE_AD_TOKEN=<your bearer token>
 ```
 
 > Your instructor provides the gateway URL and token. The model/deployment name
-> may change before class — just update `AZURE_DEPLOYMENT_DEFAULT`.
+> may change before class, so just update `AZURE_DEPLOYMENT_DEFAULT`.
 >
 > Have a personal OpenAI key instead? Set `LLM_PROVIDER=openai` and
 > `OPENAI_API_KEY=sk-...` (account needs ~$5 credit).
@@ -190,7 +190,7 @@ python hello_llm.py
 A successful run ends with:
 
 ```text
-✅ SETUP VERIFIED — you are ready for Day 1!
+✅ SETUP VERIFIED. You are ready for Day 1!
 ```
 
 If it fails, see the troubleshooting table in [`test-setup/README.md`](./test-setup/README.md) or section 9 below.
@@ -200,7 +200,8 @@ If it fails, see the troubleshooting table in [`test-setup/README.md`](./test-se
 ## 8. Jupyter Notebook Verification
 
 ```cmd
-cd %USERPROFILE%\gen-ai-course\test-setup
+REM Run from the test-setup directory you set up above
+REM (if you opened a new terminal, cd back into it first).
 .venv\Scripts\activate
 jupyter notebook
 ```
@@ -209,7 +210,7 @@ Create a new Python 3 notebook and run:
 
 ```python
 import openai, tiktoken, numpy
-print("All imports successful — you are ready for class!")
+print("All imports successful. You are ready for class!")
 ```
 
 ---
@@ -222,7 +223,7 @@ print("All imports successful — you are ready for class!")
 | `pip` is not recognized | Run `python -m ensurepip --upgrade` |
 | `code` is not recognized | Re-run VS Code installer with "Add to PATH" checked |
 | PowerShell: "running scripts is disabled" | Run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
-| OpenAI API returns `401` | Check your API key in `.env` — ensure no extra spaces or quotes |
+| OpenAI API returns `401` | Check your API key in `.env` and remove any extra spaces or quotes |
 | `faiss-cpu` install fails | Try `pip install faiss-cpu --no-cache-dir` or use `chromadb` as alternative |
 | `chromadb` install fails on older Windows | Ensure Visual C++ Build Tools are installed: <https://visualstudio.microsoft.com/visual-cpp-build-tools/> |
 | Virtual environment not activating | Use `.venv\Scripts\activate` (cmd) or `.venv\Scripts\Activate.ps1` (PowerShell) |

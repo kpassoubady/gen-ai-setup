@@ -101,20 +101,20 @@ code --install-extension GitHub.copilot-chat
 ```
 
 - Sign in with your GitHub account that has an active Copilot license.
-- Verify: open VS Code, type a comment in a `.py` file — Copilot should suggest completions.
+- Verify: open VS Code, type a comment in a `.py` file, and Copilot should suggest completions.
 - For detailed setup, see the [GitHub Copilot Helper](https://github.com/kpassoubady/github-copilot-helper).
 
 ### Option B: Cursor
 
 - Download and install from <https://cursor.com>.
-- Cursor is a standalone editor (VS Code fork) — no separate extension needed.
+- Cursor is a standalone editor (VS Code fork), so no separate extension is needed.
 - Sign in with your Cursor account.
 - For detailed setup, see the [Cursor Helper](https://github.com/kpassoubady/cursor-helper).
 
 ### Option C: Windsurf
 
 - Download and install from <https://windsurf.com>.
-- Windsurf is a standalone editor (VS Code fork) — no separate extension needed.
+- Windsurf is a standalone editor (VS Code fork), so no separate extension is needed.
 - Sign in with your Windsurf account.
 - For detailed setup, see the [Windsurf Helper](https://github.com/kpassoubady/windsurf-helper).
 
@@ -140,11 +140,11 @@ claude
 
 ## 6. Get the Setup Project & Install Packages
 
-Clone the setup repository (the only repo shared before class):
+Clone the setup repository:
 
 ```bash
-git clone https://github.com/kpassoubady/gen-ai-setup.git ~/gen-ai-course
-cd ~/gen-ai-course/test-setup
+git clone https://github.com/kpassoubady/gen-ai-setup.git
+cd ./gen-ai-setup/test-setup
 ```
 
 Create and activate a virtual environment, then install every course package:
@@ -178,7 +178,7 @@ AZURE_AD_TOKEN=<your bearer token>
 ```
 
 > Your instructor provides the gateway URL and token. The model/deployment name
-> may change before class — just update `AZURE_DEPLOYMENT_DEFAULT`.
+> may change before class, so just update `AZURE_DEPLOYMENT_DEFAULT`.
 >
 > Have a personal OpenAI key instead? Set `LLM_PROVIDER=openai` and
 > `OPENAI_API_KEY=sk-...` (account needs ~$5 credit).
@@ -187,7 +187,7 @@ AZURE_AD_TOKEN=<your bearer token>
 
 ## 8. Verify Everything Works
 
-Run the hello-LLM check. This installs nothing new — it makes one real call and confirms the full stack works:
+Run the hello-LLM check. This installs nothing new. It makes one real call and confirms the full stack works:
 
 ```bash
 python3 hello_llm.py
@@ -196,7 +196,7 @@ python3 hello_llm.py
 A successful run ends with:
 
 ```text
-✅ SETUP VERIFIED — you are ready for Day 1!
+✅ SETUP VERIFIED. You are ready for Day 1!
 ```
 
 If it fails, see the troubleshooting table in [`test-setup/README.md`](./test-setup/README.md) or section 10 below.
@@ -206,7 +206,8 @@ If it fails, see the troubleshooting table in [`test-setup/README.md`](./test-se
 ## 9. Jupyter Notebook Verification
 
 ```bash
-cd ~/gen-ai-course/test-setup
+# Run from the test-setup directory you set up above
+# (if you opened a new terminal, cd back into it first).
 source .venv/bin/activate
 jupyter notebook --no-browser
 ```
@@ -215,7 +216,7 @@ Open the URL shown in the terminal. Create a new Python 3 notebook and run:
 
 ```python
 import openai, tiktoken, numpy
-print("All imports successful — you are ready for class!")
+print("All imports successful. You are ready for class!")
 ```
 
 ---
@@ -227,7 +228,7 @@ print("All imports successful — you are ready for class!")
 | `python3: command not found` | Run `brew install python` and restart terminal |
 | `pip3: command not found` | Run `python3 -m ensurepip --upgrade` |
 | `code: command not found` | Open VS Code → `Cmd+Shift+P` → "Shell Command: Install 'code' command in PATH" |
-| OpenAI API returns `401` | Check your API key in `.env` — ensure no extra spaces or quotes |
+| OpenAI API returns `401` | Check your API key in `.env` and remove any extra spaces or quotes |
 | `faiss-cpu` install fails | Try `pip3 install faiss-cpu --no-cache-dir` or use `chromadb` as alternative |
 | Virtual environment not activating | Ensure you run `source .venv/bin/activate` (not `.venv\Scripts\activate`) |
 | Copilot not suggesting | Check license status at <https://github.com/settings/copilot> |

@@ -4,8 +4,6 @@ Pre-class installation instructions for the **Generative AI: Prompt Engineering 
 
 Please complete the setup for your operating system **before the first day of class**.
 
----
-
 ## Installation Guides
 
 Click on the link for your operating system to view the detailed setup guide.
@@ -14,8 +12,6 @@ Click on the link for your operating system to view the detailed setup guide.
 |----------|-------------------|
 | **macOS** | [macOS Install Guide](./install-mac.md) |
 | **Windows** | [Windows Install Guide](./install-win.md) |
-
----
 
 ## What You Will Install
 
@@ -28,11 +24,11 @@ Click on the link for your operating system to view the detailed setup guide.
 | **Python Packages** | Installed from [`test-setup/requirements.txt`](./test-setup/requirements.txt) (`litellm`, `openai`, `tiktoken`, `python-dotenv`, `numpy`, `faiss-cpu`, `flask`, `requests`, `jupyter`) |
 | **API Access** | A corporate LLM gateway token, **or** a personal OpenAI / Gemini / Claude key |
 
-> **Note:** Your instructor will confirm which AI coding assistant the team will use before the training. The core course content is the same regardless of the tool.
->
-> **No personal API key?** That is fine. The [`test-setup/`](./test-setup/) project supports a corporate gateway (Azure-OpenAI style) using a bearer token. Your instructor will provide the gateway URL and token.
+> [!NOTE]
+> Your instructor will confirm which AI coding assistant the team will use before the training. The core course content is the same regardless of the tool.
 
----
+> [!TIP]
+> No personal API key? That is fine. The [`test-setup/`](./test-setup/) project supports a corporate gateway (Azure-OpenAI style) using a bearer token. Contact your devops or support team for the gateway URL and token.
 
 ## Verify Your Setup (Required)
 
@@ -49,8 +45,6 @@ python3 hello_llm.py
 
 A successful run ends with `✅ SETUP VERIFIED`. See [`test-setup/README.md`](./test-setup/README.md) for details and troubleshooting.
 
----
-
 ## Quick Verification Checklist
 
 After completing the OS-specific install guide, confirm the following:
@@ -65,13 +59,9 @@ After completing the OS-specific install guide, confirm the following:
 - [ ] `python3 test-setup/hello_llm.py` prints `✅ SETUP VERIFIED`
 - [ ] Jupyter notebook launches: `jupyter notebook --no-browser`
 
----
-
 ## Need Help?
 
 If you encounter any issues during setup, please reach out to your instructor before the training day.
-
----
 
 ## AI Coding Assistant — Setup References
 

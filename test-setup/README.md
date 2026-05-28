@@ -89,7 +89,7 @@ python3 hello_llm.py
 Expected output ends with:
 
 ```
-✅ SETUP VERIFIED — you are ready for Day 1!
+✅ SETUP VERIFIED. You are ready for Day 1!
 ```
 
 ---

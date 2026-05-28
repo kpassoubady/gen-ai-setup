@@ -54,7 +54,7 @@ def main():
     print(f"Tokens:   {usage.prompt_tokens} in + {usage.completion_tokens} out")
 
     print("\n" + "=" * 60)
-    print("✅ SETUP VERIFIED — you are ready for Day 1!")
+    print("✅ SETUP VERIFIED. You are ready for Day 1!")
     print("=" * 60)
 
 
