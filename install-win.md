@@ -125,112 +125,82 @@ claude
 
 ---
 
-## 5. OpenAI API Key Setup
+## 5. Get the Setup Project & Install Packages
 
-1. Go to <https://platform.openai.com/api-keys> and create a new API key.
-2. Ensure your account has at least **$5 credit** for lab exercises.
-3. Store the key securely — never commit it to source control.
-
-Create a `.env` file in your project directory. In PowerShell:
-
-```powershell
-"OPENAI_API_KEY=sk-your-key-here" | Out-File -Encoding utf8 .env
-```
-
-Or in Command Prompt:
+Clone the setup repository (the only repo shared before class):
 
 ```cmd
-echo OPENAI_API_KEY=sk-your-key-here > .env
+git clone https://github.com/kpassoubady/gen-ai-setup.git %USERPROFILE%\gen-ai-course
+cd %USERPROFILE%\gen-ai-course\test-setup
 ```
-
-Verify the key works:
-
-```cmd
-python -c "from openai import OpenAI; from dotenv import load_dotenv; load_dotenv(); client = OpenAI(); r = client.chat.completions.create(model='gpt-4o-mini', messages=[{'role':'user','content':'Say hello in one word'}], max_tokens=10); print('API connection successful:', r.choices[0].message.content)"
-```
-
----
-
-## 6. Install Python Packages
 
 Create and activate a virtual environment:
 
 ```cmd
-mkdir %USERPROFILE%\gen-ai-course
-cd %USERPROFILE%\gen-ai-course
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
 > **PowerShell users:** If activation fails, run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` first, then use `.venv\Scripts\Activate.ps1`.
 
-Create `requirements.txt` with the following content:
-
-```text
-openai>=1.30
-tiktoken
-python-dotenv
-numpy
-requests
-
-# Day 3 — RAG
-faiss-cpu
-chromadb
-
-# Day 3 — API wrapper
-flask
-fastapi
-uvicorn[standard]
-
-# Notebooks
-jupyter
-ipykernel
-
-# Testing
-pytest
-```
-
-Install all packages:
+Install every course package:
 
 ```cmd
+python -m pip install --upgrade pip
 pip install -r requirements.txt
-```
-
-Verify key packages:
-
-```cmd
-python -c "import openai; print('openai', openai.__version__)"
-python -c "import tiktoken; print('tiktoken OK')"
-python -c "import faiss; print('faiss OK')"
-python -c "import chromadb; print('chromadb OK')"
-python -c "import flask; print('flask', flask.__version__)"
-python -c "import fastapi; print('fastapi OK')"
-python -c "import numpy; print('numpy', numpy.__version__)"
 ```
 
 ---
 
-## 7. Clone the Course Repository
+## 6. Configure API Access
 
-Your instructor will provide the repository URL. Clone it:
-
-```cmd
-git clone <REPO_URL> %USERPROFILE%\gen-ai-course\repo
-cd %USERPROFILE%\gen-ai-course\repo
-```
-
-Copy your `.env` file into the repo root:
+The setup project ships a `.env.example` template. Copy it and fill in your values:
 
 ```cmd
-copy %USERPROFILE%\gen-ai-course\.env %USERPROFILE%\gen-ai-course\repo\.env
+copy .env.example .env
 ```
+
+Open `.env` and configure the provider your team uses. **Most teams use the gateway (no personal API key needed):**
+
+```text
+LLM_PROVIDER=azure
+AZURE_API_BASE=https://<your-gateway-host>/<path>
+AZURE_API_VERSION=2024-02-01
+AZURE_DEPLOYMENT_DEFAULT=gpt-4o
+AZURE_DEPLOYMENT_MINI=gpt-4o-mini
+AZURE_AD_TOKEN=<your bearer token>
+```
+
+> Your instructor provides the gateway URL and token. The model/deployment name
+> may change before class — just update `AZURE_DEPLOYMENT_DEFAULT`.
+>
+> Have a personal OpenAI key instead? Set `LLM_PROVIDER=openai` and
+> `OPENAI_API_KEY=sk-...` (account needs ~$5 credit).
+
+---
+
+## 7. Verify Everything Works
+
+Run the hello-LLM check. It makes one real call and confirms the full stack works:
+
+```cmd
+python hello_llm.py
+```
+
+A successful run ends with:
+
+```text
+✅ SETUP VERIFIED — you are ready for Day 1!
+```
+
+If it fails, see the troubleshooting table in [`test-setup/README.md`](./test-setup/README.md) or section 9 below.
 
 ---
 
 ## 8. Jupyter Notebook Verification
 
 ```cmd
-cd %USERPROFILE%\gen-ai-course
+cd %USERPROFILE%\gen-ai-course\test-setup
 .venv\Scripts\activate
 jupyter notebook
 ```
@@ -270,8 +240,9 @@ After completing this guide, you should have:
 - Git configured
 - VS Code with Python extensions
 - One AI coding assistant installed and authenticated
-- OpenAI API key verified and working
 - All course Python packages installed in a virtual environment
+- Gateway token (or personal API key) configured in `.env`
+- `hello_llm.py` printing `✅ SETUP VERIFIED`
 - Jupyter notebooks running
 
 **You are ready for Day 1!**

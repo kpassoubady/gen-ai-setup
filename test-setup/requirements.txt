@@ -1,0 +1,25 @@
+# Core LLM
+litellm>=1.40.0
+openai>=1.30.0
+python-dotenv>=1.0.0
+tiktoken>=0.7.0
+
+# Provider SDKs (litellm uses these under the hood)
+google-generativeai>=0.7.0
+anthropic>=0.30.0
+
+# Data & embeddings
+numpy>=1.26.0
+
+# Vector stores (choose one per class)
+faiss-cpu>=1.8.0
+# chromadb>=0.5.0
+
+# Web frameworks (choose one per class)
+flask>=3.0.0
+# fastapi>=0.111.0
+# uvicorn>=0.30.0
+
+# Utilities
+requests>=2.32.0
+jupyter>=1.0.0
