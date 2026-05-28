@@ -1,23 +1,21 @@
-# Setup Verification — Hello LLM
+# Setup Verification: Hello LLM
 
-Run this self-contained project **before Day 1** to confirm your environment
+Run this self-contained project before Day 1 to confirm your environment
 works end to end: dependencies installed, credentials configured, and a real
 response returned from the LLM.
 
 A clean run prints `✅ SETUP VERIFIED` and you are ready for class.
 
----
 
 ## What is in here
 
 | File | Purpose |
-|:-----|:--------|
+|:--|:--|
 | `requirements.txt` | All Python packages used across the 4-day course |
-| `.env.example` | Configuration template — copy to `.env` and fill in your values |
+| `.env.example` | Configuration template. Copy to `.env` and fill in your values. |
 | `llm_client.py` | The same provider-agnostic client used in the course labs |
 | `hello_llm.py` | Verification script: prints config, makes one live LLM call |
 
----
 
 ## Steps
 
@@ -57,7 +55,7 @@ Windows:
 copy .env.example .env
 ```
 
-Open `.env` and fill in your values. Most teams use the **gateway** (no
+Open `.env` and fill in your values. Most teams use the gateway (no
 personal API key required):
 
 ```
@@ -69,7 +67,7 @@ AZURE_DEPLOYMENT_MINI=gpt-4o-mini
 AZURE_AD_TOKEN=<your bearer token>
 ```
 
-> The model/deployment name may change before class — just update
+> The model/deployment name may change before class. Just update
 > `AZURE_DEPLOYMENT_DEFAULT` / `AZURE_DEPLOYMENT_MINI`. No code changes needed.
 >
 > If your gateway expects the standard Azure `api-key` header instead of a
@@ -92,14 +90,13 @@ Expected output ends with:
 ✅ SETUP VERIFIED. You are ready for Day 1!
 ```
 
----
 
 ## Troubleshooting
 
 | Symptom | Fix |
-|:--------|:----|
+|:--|:-|
 | `AZURE_AD_TOKEN is NOT set` in config output | You did not create `.env` or left the token blank |
-| `401` / `403` error | Token expired or wrong gateway URL — re-check `AZURE_API_BASE` and `AZURE_AD_TOKEN` |
+| `401` / `403` error | Token expired or wrong gateway URL. Re-check `AZURE_API_BASE` and `AZURE_AD_TOKEN` |
 | `404` / deployment not found | `AZURE_DEPLOYMENT_DEFAULT` does not match a deployment on the gateway |
 | `ModuleNotFoundError` | Re-run `pip install -r requirements.txt` inside the activated venv |
 
