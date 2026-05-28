@@ -177,4 +177,4 @@ For instructor to send before Day 1:
 - At least one LLM API key: OpenAI, Google Gemini, or Anthropic Claude (with ~$5 credit)
 - Git installed
 - Required packages: `litellm`, `openai`, `tiktoken`, `python-dotenv`, `google-generativeai`, `anthropic`, `faiss-cpu` or `chromadb`, `flask` or `fastapi`, `numpy`, `requests`, `jupyter`
-- See `README.md` for OS-specific guides and `test-setup/requirements.txt` for versions
+- See [README.md](../README.md) for OS-specific guides and [test-setup/requirements.txt](../test-setup/requirements.txt) for versions
