@@ -13,8 +13,6 @@
 | **Evening Break** | **15 min** | |
 | Session 4 (Afternoon - Part 2) | ~1 hr 30 min | Wrap-up + Q&A |
 
-Total instructional time per day: ~6 hr 45 min
-
 ## DAY 1: Foundations of LLMs, NLP & OpenAI
 
 Theme: Build a strong conceptual base. By end of day, every learner can call the OpenAI API and reason about model capabilities.
