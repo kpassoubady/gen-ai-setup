@@ -91,6 +91,22 @@ Theme: Move from "it works" to "it works reliably." Master the craft of writing,
 - **Lab 2.5:** "Refactor Assistant", given messy Python code, return clean refactored code with explanation. Iterate the prompt 3 times based on observed failures.
 - Day 2 recap, Q&A
 
+## Take-Away Capstone (After Day 2): Days 1-2 Skills
+
+A self-paced take-home project handed out at the end of Day 2. Learners complete it on their own time before to consolidate the foundations and prompt-engineering skills from the first two days. It uses only Day 1 and Day 2 material (API calls, roles, input preparation, cost estimation, prompt building blocks, few-shot, chain-of-thought, role prompting, structured output, parameters, and the iteration and evaluation loop). No RAG, chatbots, or production tooling from Days 3-4 are required.
+
+The capstone is framed around a fleet and automotive services scenario and provides scaffolded starter files with sample data. Learners implement the marked sections to solve three graded-for-self-assessment exercises of increasing complexity:
+
+| Tier | Complexity | Focus |
+| :---- | :---- | :---- |
+| Exercise 1 | Low to mid | Apply a single well-structured prompt to produce reliable structured output |
+| Exercise 2 | Mid | Combine parsing, reasoning, and cost awareness on messy real-world input |
+| Exercise 3 | High (mini project) | End-to-end task with an evaluation harness and prompt version comparison |
+
+- Each exercise builds on the prompting skills of the previous one
+- A self-assessment rubric is included; the project is not formally graded
+- Instructor solution files are provided as a reference
+
 ## DAY 3: Building Custom Chatbots & RAG
 
 Theme: Move from single-shot prompts to conversational, knowledge-grounded applications.
