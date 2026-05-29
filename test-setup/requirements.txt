@@ -23,3 +23,11 @@ flask>=3.0.0
 # Utilities
 requests>=2.32.0
 jupyter>=1.0.0
+
+# Corporate network helpers
+# pip-system-certs: makes Python trust the OS certificate store, fixing
+#   "CERTIFICATE_VERIFY_FAILED" behind corporate TLS-inspection proxies.
+# boto3: provides botocore so litellm stops warning about Bedrock/SageMaker
+#   event-stream decoding being unavailable.
+pip-system-certs>=4.0
+boto3>=1.34.0

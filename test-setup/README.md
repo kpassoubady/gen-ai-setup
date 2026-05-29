@@ -99,6 +99,8 @@ Expected output ends with:
 | `401` / `403` error | Token expired or wrong gateway URL. Re-check `AZURE_API_BASE` and `AZURE_AD_TOKEN` |
 | `404` / deployment not found | `AZURE_DEPLOYMENT_DEFAULT` does not match a deployment on the gateway |
 | `ModuleNotFoundError` | Re-run `pip install -r requirements.txt` inside the activated venv |
+| `CERTIFICATE_VERIFY_FAILED` / `unable to get local issuer certificate` | Corporate TLS-inspection proxy. `pip-system-certs` (in `requirements.txt`) makes Python trust the OS certificate store. Re-run `pip install -r requirements.txt`. |
+| `could not pre-load bedrock-runtime` / `No module named 'botocore'` | Harmless litellm warning. `boto3` (in `requirements.txt`) silences it. Re-run `pip install -r requirements.txt`. |
 
 If the call still fails after these checks, contact your instructor before the
 training day.
