@@ -4,6 +4,16 @@
 
 Pre-class setup repository for the "Generative AI: Prompt Engineering for Software Developers" 4-day training course. Contains OS-specific install guides (macOS, Windows) and a self-contained verification project (`test-setup/`) that confirms the student's environment works end to end before Day 1.
 
+## Related repositories
+
+| Repo | Path | Purpose |
+| :--- | :--- | :--- |
+| gen-ai | `../gen-ai` | Instructor-led 4-day course (slides, labs, demos, diagrams) |
+| building-with-llms-book | `../building-with-llms-book` | Book manuscript: 14 chapters, appendices, PDF/EPUB build |
+| building-with-llms-companion | `../building-with-llms-companion` | Book companion: exercises, solutions, capstone projects |
+
+The `test-setup/llm_client.py` in this repo mirrors the pattern in `gen-ai/shared/llm_client.py` and `building-with-llms-companion/shared/llm_client.py`. Keep provider models and API patterns in sync across all three.
+
 ## Repository structure
 
 ```
